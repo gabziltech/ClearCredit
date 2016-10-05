@@ -1,0 +1,181 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gabzil.retail_shop.AddCustomer">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/custmrname"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/curve"
+                            android:hint="Name"
+                            android:padding ="2dp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerTextView"
+                            android:text="Flat No." />
+
+                        <EditText
+                            android:id="@+id/cstmraddress"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerEditText" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerTextView"
+                            android:text="Building Name" />
+
+                        <EditText
+                            android:id="@+id/building"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerEditText" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerTextView"
+                            android:text="Area" />
+
+                        <EditText
+                            android:id="@+id/area"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerEditText" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerTextView"
+                            android:text="City" />
+
+                        <Spinner
+                            android:id="@+id/city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerEditText"
+                            android:entries="@array/city_arrays" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerTextView"
+                            android:text="Credit Amount" />
+
+                        <EditText
+                            android:id="@+id/amount"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            style="@style/CustomerEditText" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/CustomerTextView"
+                            android:text="Credit Days" />
+
+                        <EditText
+                            android:id="@+id/days"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            style="@style/CustomerEditText" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#FF8A65"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:text="Contact Details"
+                            android:textColor="#323333"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/addcontactbtn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@mipmap/ic_add" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/gray"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/contactlist"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/gray"
+                    android:dividerHeight="2dp"
+                    android:padding="5dp"
+                    android:visibility="gone">
+                </ListView>
+
+                <TextView
+                    android:id="@+id/msg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="No contact number"
+                    android:textSize="18dp"
+                    android:textStyle="bold|italic"></TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</FrameLayout>

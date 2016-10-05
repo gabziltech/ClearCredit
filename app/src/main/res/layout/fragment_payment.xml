@@ -1,0 +1,151 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context="com.gabzil.retail_shop.Payment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_name"/>
+
+                <AutoCompleteTextView
+                    android:id="@+id/customer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    style="@style/ShopEditView1"
+                    android:hint="Name" />
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/custlist"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="40dp"
+                android:visibility="gone"></ListView>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" >
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_amount1"/>
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    style="@style/ShopEditView1"
+                    android:inputType="numberDecimal"
+                    android:hint="Amount"  />
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" >
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_paymentmode"/>
+
+                <Spinner
+                    android:id="@+id/payment_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="9"
+                    style="@style/ShopEditView1"
+                    android:hint="Customer Name" />
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <ImageView
+                    android:id="@+id/calbtn"
+                    android:layout_width="5dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_calender"/>
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    style="@style/ShopEditView1"
+                    android:inputType="number"
+                    android:hint="Date" />
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="right"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shop_name">Mi Aplicación</string>
+
+    <string name="app_name">Retail Shop</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_marathi">Marathi</string>
+    <string name="action_english">English</string>
+    <string name="action_sync">Sync</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string-array name="navigation_drawer_items_array">
+        <item>Shop Details</item>
+        <item>Bill</item>
+        <item>Customer</item>
+        <item>RePayment</item>
+        <item>Bill OutStanding</item>
+        <item>Contact</item>
+        <item>Disclaimer</item>
+        <item>Logout</item>
+    </string-array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_single_item_view">SingleItemView</string>
+
+    <string name="city_prompt">Choose a City</string>
+
+    <string-array name="city_arrays">
+        <item>Select your City</item>
+        <item>Pune</item>
+        <item>Mumbai</item>
+        <item>Nagpur</item>
+        <item>Latur</item>
+    </string-array>
+</resources>
