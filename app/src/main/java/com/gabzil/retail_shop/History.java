@@ -394,7 +394,8 @@ public class History extends Fragment implements OnGettingInfoFromPeriod, TaskIm
         if (bill.size() > 0) {
             message.setVisibility(View.GONE);
             list.setVisibility(View.VISIBLE);
-            subAdap1 = new AllBillListAdaptor(getActivity(), R.layout.historyresult1, bill, this);
+            boolean flag=true;
+            subAdap1 = new AllBillListAdaptor(getActivity(), R.layout.historyresult1, bill, this,flag);
             list.setAdapter(subAdap1);
         }
     }

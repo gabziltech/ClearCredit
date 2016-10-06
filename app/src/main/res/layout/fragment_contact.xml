@@ -4,10 +4,59 @@
     android:layout_height="match_parent"
     tools:context="com.gabzil.retail_shop.Contact">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello Blank Contact" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:text="The security of personal information about you is our priority. We protect this information by maintaining physical, electronic, and procedural safeguards that meet applicable law.The End User collects Information about customers through the Clear Credit application." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:text="The Information we collect about you comes from the following sources:" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:text="1.Information we receive from you on applications or other forms, such as your name, address, and telephone number." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:text="2.Information about your transactions with us, our affiliates, or non-affiliated third parties, such as your account balances, payment history, and account activity." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:text="3.Information we receive about you from other sources, such as your employer and other third parties." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:text="The  Clear Credit application may share Information with several types of entities, including other affiliates among the family of companies controlled by the Clear Credit, as well as non-affiliated third parties. The sensitive information collected is only used for legitimate business purposes and is only shared with third parties to the extent necessary to fulfil those purposes. Sensitive information is used by the  Clear Credit to provide enrolled clients with the services requested by them and for processing payments." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:text="This document is an electronic record in terms of existing and applicable Information Technology laws and the amended provisions thereto pertaining to electronic records in various allied statutes as amended pursuant to the Information Technology laws. We are not liable for any data personal data loss and end user faults." />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

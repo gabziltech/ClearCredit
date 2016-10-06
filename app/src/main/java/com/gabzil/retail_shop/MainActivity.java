@@ -75,7 +75,7 @@ public class MainActivity extends ActionBarActivity implements OnGettingSyncData
             drawerItem[3] = new ObjectDrawerItem(R.mipmap.ic_payment1, "Payment");
             drawerItem[4] = new ObjectDrawerItem(R.mipmap.ic_bill1, "Bill Outstanding");
             drawerItem[5] = new ObjectDrawerItem(R.mipmap.ic_history1, "History");
-            drawerItem[6] = new ObjectDrawerItem(R.mipmap.ic_contact1, "Contact");
+            drawerItem[6] = new ObjectDrawerItem(R.mipmap.ic_contact1, "Terms & Conditions");
 
             DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(this, R.layout.listview_item_row, drawerItem);
             mDrawerList.setAdapter(adapter);
@@ -163,7 +163,11 @@ public class MainActivity extends ActionBarActivity implements OnGettingSyncData
                 return true;
 
             case R.id.action_user:
-                ShowPopUp();
+                shop = db.getAllShops();
+                if (shop.size() == 0)
+                    ShowPopUp();
+                else
+                    Toast.makeText(getApplicationContext(), "You are already using shop", Toast.LENGTH_SHORT).show();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -188,8 +192,15 @@ public class MainActivity extends ActionBarActivity implements OnGettingSyncData
 
             @Override
             public void onClick(View v) {
-                SyncNewUser(Integer.parseInt(code.getText().toString().trim()));
-                popupWindow.dismiss();
+                String c=code.getText().toString().trim();
+                if(c.length()==0){
+                    Toast.makeText(getApplicationContext(), "Please enter code", Toast.LENGTH_SHORT).show();
+                } else if(c.length()<4) {
+                    Toast.makeText(getApplicationContext(), "Please enter valid code", Toast.LENGTH_SHORT).show();
+                }else{
+                    SyncNewUser(Integer.parseInt(c));
+                    popupWindow.dismiss();
+                }
             }
         });
 
@@ -248,10 +259,10 @@ public class MainActivity extends ActionBarActivity implements OnGettingSyncData
     DataHelp dh;
     @Override
     public void OnGettingSyncData(String results) {
-        mScanning = true;
+        mScanning = false;
         invalidateOptionsMenu();
         try {
-            if (results != "null" && results.length() > 0) {
+            if (!results.equals("null") & results.length() > 0) {
                 JSONObject obj = new JSONObject(results);
                 String subIDInfo = obj.toString();
                 Gson gson = new Gson();
@@ -268,7 +279,9 @@ public class MainActivity extends ActionBarActivity implements OnGettingSyncData
                 } catch (Exception e) {
                     e.getMessage();
                 }
-            } else {
+            }else if(results.equals("null")){
+                Toast.makeText(getApplicationContext(), "Invalid code", Toast.LENGTH_SHORT).show();
+            }else {
                 dh.UpdateDate(Date1, 1);
                 Toast.makeText(getApplicationContext(), "Some problem occured, Sync is not done", Toast.LENGTH_SHORT).show();
                 mScanning = false;

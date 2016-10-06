@@ -53,7 +53,8 @@ public class CustomerBillList extends Fragment implements TaskImageComplete {
 
     public void SetBillsToList(ArrayList<BillDBEntities> bill) {
         if (bill.size() > 0){
-            subAdap = new AllBillListAdaptor(getActivity(), R.layout.historyresult, bill,this);
+            boolean flag=false;
+            subAdap = new AllBillListAdaptor(getActivity(), R.layout.historyresult, bill,this,flag);
             BillList.setAdapter(subAdap);
         }
         else {

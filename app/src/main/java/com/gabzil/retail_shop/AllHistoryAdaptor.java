@@ -29,7 +29,7 @@ public class AllHistoryAdaptor extends ArrayAdapter<HistoryResultEntity> {
 
     private class ViewHolder {
         LinearLayout paid,balance,billtype,paymenttype;
-        TextView date,date2,billamount,paidamount,balamount,items,description,paymentamount,paymentmode;;
+        TextView date,date2,billamount,paidamount,balamount,items,description,paymentamount,paymentmode,billname,payname,date3;
         Button bill_image;
         HistoryResultEntity data;
     }
@@ -48,8 +48,11 @@ public class AllHistoryAdaptor extends ArrayAdapter<HistoryResultEntity> {
                 holder.paymenttype = (LinearLayout) convertView.findViewById(R.id.paymenttype);
                 holder.paid = (LinearLayout) convertView.findViewById(R.id.paid);
                 holder.balance = (LinearLayout) convertView.findViewById(R.id.balance);
+                holder.billname = (TextView) convertView.findViewById(R.id.billname);
+                holder.payname = (TextView) convertView.findViewById(R.id.payname);
                 holder.date = (TextView) convertView.findViewById(R.id.date);
                 holder.date2 = (TextView) convertView.findViewById(R.id.date2);
+                holder.date3 = (TextView) convertView.findViewById(R.id.date3);
                 holder.billamount = (TextView) convertView.findViewById(R.id.billamount);
                 holder.paidamount = (TextView) convertView.findViewById(R.id.paidamount);
                 holder.balamount = (TextView) convertView.findViewById(R.id.balanceamount);
@@ -84,6 +87,7 @@ public class AllHistoryAdaptor extends ArrayAdapter<HistoryResultEntity> {
         if(holder.data.getIsBill()) {
             holder.paymenttype.setVisibility(View.GONE);
             holder.billtype.setVisibility(View.VISIBLE);
+            holder.billname.setText(holder.data.getCustomerName());
             holder.billamount.setText("Rs " + String.format("%.2f", holder.data.getBillAmount()));
             holder.paidamount.setText("Rs " + String.format("%.2f", holder.data.getPaidAmount()));
             holder.balamount.setText("Rs " + String.format("%.2f", holder.data.getPendingAmount()));
@@ -104,6 +108,7 @@ public class AllHistoryAdaptor extends ArrayAdapter<HistoryResultEntity> {
         else {
             holder.billtype.setVisibility(View.GONE);
             holder.paymenttype.setVisibility(View.VISIBLE);
+            holder.payname.setText(holder.data.getCustomerName());
             holder.paymentmode.setText(String.valueOf(holder.data.getPaymentMode()));
             holder.paymentamount.setText("Rs " + String.format("%.2f", holder.data.getPayAmount()));
             holder.paymentmode.setText(String.valueOf(holder.data.getPaymentMode()));

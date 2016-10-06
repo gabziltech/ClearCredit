@@ -15,9 +15,9 @@
         <item>Customer</item>
         <item>Bill</item>
         <item>Payment</item>
-        <item>Bill OutStanding</item>
+        <item>Bill Outstanding</item>
         <item>History</item>
-        <item>Contact</item>
+        <item>Terms &amp; Conditions</item>
     </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>

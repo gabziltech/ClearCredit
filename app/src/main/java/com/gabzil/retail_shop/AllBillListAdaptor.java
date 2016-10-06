@@ -19,17 +19,19 @@ import java.util.ArrayList;
 public class AllBillListAdaptor extends ArrayAdapter<BillDBEntities> {
     private ArrayList<BillDBEntities> SubsList;
     private TaskImageComplete mCallback;
+    private boolean flag;
 
-    public AllBillListAdaptor(Activity activity, int billlist, ArrayList<BillDBEntities> subList,TaskImageComplete listner) {
+    public AllBillListAdaptor(Activity activity, int billlist, ArrayList<BillDBEntities> subList,TaskImageComplete listner,boolean flag) {
         super(activity, billlist, subList);
         this.SubsList = new ArrayList<BillDBEntities>();
         this.SubsList.addAll(subList);
         this.mCallback=listner;
+        this.flag=flag;
     }
 
     private class ViewHolder {
-        LinearLayout paid,balance,billtype,paymenttype;
-        TextView date,billamount,paidamount,balamount,items,description;
+        LinearLayout paid,balance,billtype,paymenttype,billnamelay;
+        TextView date,billamount,paidamount,balamount,items,description,billname,date3;
         Button bill_image;
         BillDBEntities data;
     }
@@ -45,9 +47,12 @@ public class AllBillListAdaptor extends ArrayAdapter<BillDBEntities> {
 
             holder = new ViewHolder();
             holder.billtype = (LinearLayout) convertView.findViewById(R.id.billtype);
+            holder.billnamelay = (LinearLayout) convertView.findViewById(R.id.billnamelay);
             holder.paymenttype = (LinearLayout) convertView.findViewById(R.id.paymenttype);
             holder.paid = (LinearLayout) convertView.findViewById(R.id.paid);
+            holder.date3 = (TextView) convertView.findViewById(R.id.date3);
             holder.balance = (LinearLayout) convertView.findViewById(R.id.balance);
+            holder.billname = (TextView) convertView.findViewById(R.id.billname);
             holder.date = (TextView) convertView.findViewById(R.id.date);
             holder.billamount = (TextView) convertView.findViewById(R.id.billamount);
             holder.paidamount = (TextView) convertView.findViewById(R.id.paidamount);
@@ -81,6 +86,16 @@ public class AllBillListAdaptor extends ArrayAdapter<BillDBEntities> {
         holder.data = SubsList.get(position);
         String date = holder.data.getUserDate();
         holder.date.setText(TextClean(date.substring(0, 12)));
+        holder.billname.setText(holder.data.getCustomerName());
+        holder.date3.setText(TextClean(date.substring(0, 12)));
+        if (flag) {
+            holder.billnamelay.setVisibility(View.VISIBLE);
+            holder.date3.setVisibility(View.GONE);
+        }else{
+            holder.billnamelay.setVisibility(View.GONE);
+            holder.date3.setVisibility(View.VISIBLE);
+        }
+
         holder.billamount.setText("Rs " +String.format("%.2f", holder.data.getBillAmount()));
         holder.paidamount.setText("Rs " +String.format("%.2f", holder.data.getPaidAmount()));
         holder.balamount.setText("Rs " +String.format("%.2f", holder.data.getPendingAmount()));

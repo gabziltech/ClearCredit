@@ -155,7 +155,8 @@ public class BillOutstanding extends Fragment implements OnGettingOutStanding {
                 }
                 XAxis xAxis = chart.getXAxis();
                 xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-
+                xAxis.setTextSize(10f);
+                xAxis.setSpaceBetweenLabels(2);
                 YAxis yAxisRight = chart.getAxisRight();
                 yAxisRight.setEnabled(false);
                 TextView xAxisName = new TextView(getActivity());

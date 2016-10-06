@@ -24,7 +24,7 @@ public class AllPaymentListAdaptor extends ArrayAdapter<PaymentDBEntities> {
     }
 
     private class ViewHolder {
-        TextView date,paymentamount,paymentmode;
+        TextView date,paymentamount,paymentmode,payname;
         PaymentDBEntities data;
         LinearLayout billtype,paymenttype;
     }
@@ -41,6 +41,7 @@ public class AllPaymentListAdaptor extends ArrayAdapter<PaymentDBEntities> {
             holder = new ViewHolder();
             holder.billtype = (LinearLayout) convertView.findViewById(R.id.billtype);
             holder.paymenttype = (LinearLayout) convertView.findViewById(R.id.paymenttype);
+            holder.payname = (TextView) convertView.findViewById(R.id.payname);
             holder.date = (TextView) convertView.findViewById(R.id.date2);
             holder.paymentamount = (TextView) convertView.findViewById(R.id.paymentamount);
             holder.paymentmode = (TextView) convertView.findViewById(R.id.paymentmode);
@@ -54,6 +55,7 @@ public class AllPaymentListAdaptor extends ArrayAdapter<PaymentDBEntities> {
         holder.data = SubsList.get(position);
         String date = holder.data.getUserDate();
         holder.date.setText(TextClean(date.substring(0, 12)));
+        holder.payname.setText(holder.data.getCustomerName());
         holder.paymentamount.setText("Rs " +String.format("%.2f", holder.data.getPayAmount()));
         holder.paymentmode.setText(String.valueOf(holder.data.getPaymentMode()));
 
